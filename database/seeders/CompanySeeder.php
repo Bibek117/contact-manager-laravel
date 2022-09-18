@@ -16,20 +16,26 @@ class CompanySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('companies')->truncate();
-        $company = [];
-        $faker = Faker::create();
-        foreach(range(1,10) as $index){
-            $company[] = [
-               // 'name' => 'Test Company' . $index,
-               'name' => $faker->company,
-               //'name' => fake()->company(),
-                'address' => '123 Test Street' . $index,
-                'website' => 'https://test.com' . $index,
-                'email' => 'company' . $index . '@gmail.com',
-            ];
-        }
-        DB::table('companies')->insert($company);
+
+
+        \App\Models\Company::factory(5)->create();
+
+        
+       // DB::table('companies')->truncate();
+       // DB::table('companies')->delete();  //for foreign key ondelete cascade
+        // $company = [];
+        // $faker = Faker::create();
+        // foreach(range(1,10) as $index){
+        //     $company[] = [
+        //        // 'name' => 'Test Company' . $index,
+        //        'name' => $faker->company,
+        //        //'name' => fake()->company(),
+        //         'address' => '123 Test Street' . $index,
+        //         'website' => 'https://test.com' . $index,
+        //         'email' => 'company' . $index . '@gmail.com',
+        //     ];
+        // }
+        // DB::table('companies')->insert($company);
 
 
 

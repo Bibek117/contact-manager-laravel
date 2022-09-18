@@ -19,6 +19,11 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
+        \App\Models\Company::factory()->count(5)->hasContacts(4)->create();  //each company has 4 contacts defined in relation in Company.php
+       
+       
+        // \App\Models\Contact::factory(10)->create();
+
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
@@ -29,6 +34,6 @@ class DatabaseSeeder extends Seeder
         //     'website' => 'https://test.com',
         //     'email' => 'abc@gamil.com',
         // ]);
-        $this->call(CompanySeeder::class);
+       // $this->call([CompanySeeder::class, ContactSeeder::class]);
     }
 }
